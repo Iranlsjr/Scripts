@@ -7,7 +7,7 @@ rHost = input("Insert IP or name of website: ")
 rHostIP = socket.gethostbyname(rHost)
 
 rPorts = [
-    21,22,23,22,53,80,110,111,139,143,443,445,
+    21,22,23,53,80,110,111,139,143,443,445,
     993,995,3306,3389,5432,5900,8000,8080,8443,32768
 ]
 
