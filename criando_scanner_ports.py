@@ -12,10 +12,9 @@ ports = [21, 22, 23, 53, 80, 110, 111, 139, 143, 443, 445,
 def escanear(ip):
     for porta in ports:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.settimeout(0.5)
+        s.settimeout(0.2)
         if s.connect_ex((ip, porta)) == 0:
             print(ip, porta, "Aberta")
-            print("-" * 55)
         s.close()
 
 if "/" in alvo:
