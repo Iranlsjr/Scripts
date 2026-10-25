@@ -10,7 +10,7 @@ connection.connect((host,port))
 print ("Conected with Host: "+ host)
 
 while True:
-    msg = input()  + "\n "
+    msg = input("Client:")  + "\n "
     connection.sendall(msg.encode())
     
     resposta = connection.recv(1024).decode()

@@ -21,7 +21,7 @@ while True:
     
     print(msg)
     
-    resposta = input() +"\n"
+    resposta = input("Server") +"\n"
     connection_2.sendall(resposta.encode())
     
 connection_2.close()
