@@ -10,4 +10,13 @@ print ("Conected with Host: "+ host)
 
 while True:
     msg = input()  + "\n "
-    s.send(msg.encode())
+    s.sendall(msg.encode())
+    
+    resposta = s.recv(1024).decode()
+    
+    if not resposta:
+        print("Servidor desconectou")
+        break
+    print(resposta)
+
+s.close()
