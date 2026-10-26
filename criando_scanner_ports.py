@@ -11,7 +11,7 @@ ports = [21, 22, 23, 25, 53, 80, 110, 111, 139, 143, 443, 445,
 
 def pegar_banner(s):
     try:
-        s.settimeout(0.2)
+        s.settimeout(0.5)
         dados = s.recv(1024)
         return dados.decode(errors="replace").strip()
     except   (socket.timeout, ConnectionResetError, OSError):
@@ -20,7 +20,7 @@ def pegar_banner(s):
 def escanear(ip):
     for porta in ports:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.settimeout(0.2)
+        s.settimeout(0.5)
         if s.connect_ex((ip, porta)) == 0:
             banner = pegar_banner(s)
             if  banner:
